@@ -12,16 +12,12 @@ public class RotateArrayDPlaces {
         int temp[]=new int[d];
         for(int i=0;i<d;i++)
             temp[i]=arr[i];
-        int i=0,tmp=0;
-        while(d<n){
+        int i;
+        for(i=0;d<n;i++,d++){
             arr[i]=arr[d];
-            i++;
-            d++;
         }
-        while(i<n){
+        for(int tmp=0;i<n;i++,tmp++){
             arr[i]=temp[tmp];
-            i++;
-            tmp++;
         }
         for(int k: arr)
             System.out.print(k+" ");
