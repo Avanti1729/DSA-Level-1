@@ -12,16 +12,14 @@ int Majority(vector<int>&arr,int n){
     return -1;
 }
 int MajorityElement(vector<int>&arr,int n){
-    int count=0,ele;
+    int count=0,ele=arr[0];
     for(int i=0;i<n;i++){
-        if(count==0){
-            count=1;
-            ele=arr[i];
-        }
-        else if(arr[i]==ele)
+        if(arr[i]==ele)
             count++;
         else 
             count--;
+        if(count==0)
+            ele=arr[i+1];
     }
     int count1=0;
     for(int i=0;i<n;i++){
